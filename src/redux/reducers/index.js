@@ -1,1 +1,1 @@
-export  * from './moviesReduser'
+export  * from './moviesReducer'
