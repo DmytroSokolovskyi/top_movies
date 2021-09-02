@@ -5,6 +5,7 @@ export const baseURL = 'https://api.themoviedb.org/3/';
 export const allMoviesUrl = 'discover/movie';
 export const genresURL = 'genre/movie/list';
 export const byGenresURL = 'discover/movie?&with_genres=';
+export const imageURL = 'https://image.tmdb.org/t/p/w300/';
 
 
 

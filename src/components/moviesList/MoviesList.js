@@ -2,15 +2,12 @@ import {useEffect} from "react";
 import {getMovies} from "../../services/movies.service";
 import {useDispatch, useSelector} from "react-redux";
 import Movie from "../movie/Movie";
+import cl from './MoviesList.module.css'
 
 export default function MoviesList() {
 
     const {movies, genres, moviesByGenre} = useSelector(state => state);
     const dispatch = useDispatch();
-
-    console.log(movies);
-    console.log(genres);
-    console.log(moviesByGenre);
 
 
     useEffect(() => {
@@ -18,7 +15,7 @@ export default function MoviesList() {
     }, []);
 
     return (
-        <div>
+        <div className={cl.mList}>
             {
                 movies.map(movie => <Movie key={movie.id} movie={movie} />)
             }

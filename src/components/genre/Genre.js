@@ -13,14 +13,13 @@ export default function Genre() {
     }, []);
 
     const selectedGenre = (e) => {
-        const genreId = e.target.value;
         dispatch(getMoviesByGenre(e.target.value))
     };
 
 
     return (
         <div>
-            <select name="selectCars" onChange={selectedGenre}>
+            <select name="selectMovie" onChange={selectedGenre}>
                 {
                   genres &&  genres.map(value => <SelectedGenre selectedGenre={selectedGenre} key={value.id} item={value}/>)
                 }
