@@ -1,11 +1,9 @@
-import { Pagination } from "react-custom-pagination";
+import {Pagination} from "react-custom-pagination";
 import cl from "./Pagination.module.css"
 import {useDispatch} from "react-redux";
 import {getMoviesByPage, getMoviesByPageAndGenre} from "../../../services/movies.service";
 
-const MyPagination = ({state, state: {total_results, chosenGenre}}) => {
-    console.log(state);
-    console.log(chosenGenre);
+const MyPagination = ({state: {total_results, chosenGenre}}) => {
 
     const dispatch = useDispatch();
 
@@ -21,7 +19,7 @@ const MyPagination = ({state, state: {total_results, chosenGenre}}) => {
                     totalPosts={total_results}
                     postsPerPage={20}
                     paginate={paginate}
-                    view={7}
+                    view={10}
                     showLast={true}
                     showFirst={true}
                     showIndex={true}

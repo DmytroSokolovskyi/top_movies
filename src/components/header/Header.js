@@ -1,8 +1,8 @@
 import cl from './Header.module.css'
 import Genre from "../genre/Genre";
-import MyButton from "../UI/myButton/MyButton";
+import SwitchTheme from "../UI/switchTheme/SwitchTheme";
 
-export default function Header () {
+export default function Header() {
     return (
         <div className={cl.header}>
             <div>
@@ -12,10 +12,8 @@ export default function Header () {
                 <Genre/>
             </div>
             <div>
-                <MyButton>
-                    switch
-                </MyButton>
+                <SwitchTheme/>
             </div>
         </div>
     );
- }
+}

@@ -4,9 +4,10 @@ import {getGenres, getMoviesByGenre} from "../../services/movies.service";
 import SelectedGenre from "./selectedGenre/SelectedGenre";
 
 
+
 export default function Genre() {
 
-    const {genres} = useSelector(state => state);
+    const {genres} = useSelector(state => state.moviesReducer);
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getGenres());

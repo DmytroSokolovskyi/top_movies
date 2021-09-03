@@ -6,7 +6,7 @@ import cl from './MoviesList.module.css'
 import MyPagination from "../UI/paginations/Paginations";
 export default function MoviesList() {
 
-    const state = useSelector(state => state);
+    const state = useSelector(state => state.moviesReducer);
     const {movies} = state;
     const dispatch = useDispatch();
 
@@ -16,7 +16,7 @@ export default function MoviesList() {
     }, [dispatch]);
 
     return (
-        <div>
+        <div className={cl.mainList}>
             <MyPagination state={state} />
             <div className={cl.mList}>
                 {
