@@ -6,11 +6,46 @@
     border: 2px solid #da9a3b;
     margin: 3px;
     width: 24%;
+    min-width: 300px;
     border-radius: 7px;
     background-image: linear-gradient(120deg, #352f1f, transparent);
+    cursor: pointer;
+    height: 500px;
+
+
+}
+.stars {
+    width: 100%;
+    height: 7%;
+    align-items: center;
+    inline-size: auto;
 }
 
-.img {
+.title {
     width: 100%;
+    height: 7%;
+    text-align: center;
+    font-weight: 900;
+    font-size: 18px;
+}
+
+
+.img {
+    width: 80%;
+    height: 85%;
+    object-fit: cover;
     border-radius: 10px;
 }
+
+.info {
+    width: 90%;
+    height: fit-content;
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 600;
+    font-size: 18px;
+    color: #1c1010;
+    overflow: hidden;
+
+}
+
