@@ -5,14 +5,13 @@
     align-items: center;
     border: 2px solid #da9a3b;
     margin: 3px;
-    width: 24%;
-    min-width: 300px;
+    width: 20%;
+    min-width: 210px;
+    max-width: 300px;
     border-radius: 7px;
     background-image: linear-gradient(120deg, #352f1f, transparent);
     cursor: pointer;
-    height: 500px;
-
-
+    height: 50vh;
 }
 .stars {
     width: 100%;
@@ -23,29 +22,31 @@
 
 .title {
     width: 100%;
-    height: 7%;
     text-align: center;
     font-weight: 900;
     font-size: 18px;
+    height: fit-content;
 }
 
-
-.img {
-    width: 80%;
+.switch {
+    width: 90%;
     height: 85%;
-    object-fit: cover;
+    overflow: hidden;
+}
+
+.imgPoster {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
     border-radius: 10px;
+    overflow: auto;
 }
 
 .info {
     width: 90%;
-    height: fit-content;
-    margin: 0 auto;
     text-align: center;
-    font-weight: 600;
-    font-size: 18px;
-    color: #1c1010;
+    font-weight: 500;
+    font-size: 16px;
     overflow: hidden;
-
 }
 

@@ -1,0 +1,12 @@
+.text {
+    color: #f7eeee;
+    text-shadow: 0 0 5px #100606,
+    0 0 10px #655f5f,
+    0 0 20px #fbf9f7,
+    0 0 40px #4a4436,
+    0 0 80px #225ba0,
+    0 0 90px #e8f1f1,
+    0 0 100px #dddddd,
+    0 0 150px #f4f4f5;
+    cursor: pointer;
+}

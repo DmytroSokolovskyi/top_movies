@@ -1,7 +1,8 @@
 import {Pagination} from "react-custom-pagination";
 import cl from "./Pagination.module.css"
 import {useDispatch} from "react-redux";
-import {getMoviesByPage, getMoviesByPageAndGenre} from "../../../services/movies.service";
+import {getMoviesByPage, getMoviesByPageAndGenre} from "../../../services";
+
 
 const MyPagination = ({state: {total_results, chosenGenre}}) => {
 
@@ -9,6 +10,7 @@ const MyPagination = ({state: {total_results, chosenGenre}}) => {
 
 
     const paginate = (number) => {
+
         chosenGenre ? dispatch(getMoviesByPageAndGenre(number, chosenGenre)) : dispatch(getMoviesByPage(number))
     };
 

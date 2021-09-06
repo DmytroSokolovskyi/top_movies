@@ -1,0 +1,22 @@
+.mainCompanie {
+    height: auto;
+    width: 10%;
+    max-width: 60px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+
+.text {
+    text-align: center;
+    font-size: 9px;
+    font-weight: 900;
+}
+
+.imgCompanie {
+    height: 70%;
+    width: 100%;
+}

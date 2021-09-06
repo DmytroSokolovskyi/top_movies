@@ -1,0 +1,15 @@
+.userDiv {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-image: linear-gradient(240deg, #817556, transparent);
+    border-radius: 30%;
+
+}
+
+.imgUser {
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+}

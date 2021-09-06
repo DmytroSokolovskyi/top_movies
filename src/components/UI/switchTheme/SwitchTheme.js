@@ -12,17 +12,16 @@ export default function SwitchTheme() {
 
 
     return (
-        <div>
+        <div className= "divTheme">
             <label htmlFor="toggle" className= "label"> light </label>
             <span className="toggle-control">
     <input
         className="toggle"
         type="checkbox"
-        // checked={theme}
         onChange={themeToggler}
         id="toggle"
     />
-    <label htmlFor="toggle"/>
+    <label className= "toggle-push-theme" htmlFor="toggle"/>
   </span>
             <label htmlFor="toggle" className= "label"> dark </label>
         </div>

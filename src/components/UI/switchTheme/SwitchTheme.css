@@ -1,9 +1,20 @@
+.divTheme {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .toggle-control {
     position: relative;
     padding: 0 4px;
 }
+.toggle-push-theme {
+    margin: 3px;
+}
 .label {
-    padding: 5px 15px;
+    width: 28%;
+    align-items: center;
+    padding: 2px 10px;
+    TEXT-ALIGN: center;
     color: #151414;
     font-size: 14px;
     font-weight: 900;

@@ -4,8 +4,12 @@ export const apiKey = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxNGRiZGJhNDgxMzk5OTE2MDVm
 export const baseURL = 'https://api.themoviedb.org/3/discover/movie?';
 export const genresURL = 'https://api.themoviedb.org/3/genre/movie/list';
 export const byGenresURL = '&with_genres=';
+export const movieSearch = 'https://api.themoviedb.org/3/search/movie?&query=';
 export const imageURL = 'https://image.tmdb.org/t/p/w300/';
 export const byPageURL = '&page=';
+export const detailsURL = 'https://api.themoviedb.org/3/movie/';
+export const avatarURL = 'https://st4.depositphotos.com/12837522/40798/v/950/depositphotos_407981184-stock-illustration-black-flat-man-avatar-sun.jpg';
+
 
 
 

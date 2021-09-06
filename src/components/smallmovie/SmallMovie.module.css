@@ -1,0 +1,26 @@
+.mainSmall {
+    display: flex;
+    border: 1px solid #da9a3b;
+    height: 100%;
+    width: 100%;
+    min-width: 40vh;
+    border-radius: 5px;
+    margin: 0 2px;
+    background-image: linear-gradient(120deg, #352f1f, transparent);
+    cursor: pointer;
+}
+
+.smallImg {
+    width: 50%;
+    object-fit: fill;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+.textSmall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: fit-content;
+}
