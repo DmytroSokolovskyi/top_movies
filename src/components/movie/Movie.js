@@ -9,7 +9,6 @@ export default function Movie({movie, movie: {title, poster_path, overview}}) {
     const history = useHistory();
 
         let [moreInfo, setMoreInfo] = useState(false);
-    // console.log(movie);
 
     const goToInfo = () => {
         history.push(`/${movie.id}`)
@@ -25,12 +24,12 @@ export default function Movie({movie, movie: {title, poster_path, overview}}) {
             </div>
             <div className={cl.switch}>
                 { moreInfo ? <div className={cl.info}>{overview}</div>  :
-                    <img className={cl.imgPoster} src={imageURL + poster_path} alt=""/>
+                    poster_path && <img className={cl.imgPoster} src={imageURL + poster_path} alt={movie.title}/>
                 }
             </div>
 
             <div className={cl.title}>
-                <p>{title}</p>
+                {title}
             </div>
         </div>
     );

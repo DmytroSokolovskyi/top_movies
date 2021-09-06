@@ -1,19 +1,17 @@
 import {Pagination} from "react-custom-pagination";
 import cl from "./Pagination.module.css"
-import {useDispatch} from "react-redux";
-import {getMoviesByPage, getMoviesByPageAndGenre} from "../../../services";
+import {useSelector} from "react-redux";
 
 
-const MyPagination = ({state: {total_results, chosenGenre}}) => {
 
-    const dispatch = useDispatch();
+const MyPagination = (props) => {
 
-
+    const {moviesReducer} = useSelector(state => state);
+    const {total_results} = moviesReducer;
+    const {history, location: {pathname}} = props;
     const paginate = (number) => {
-
-        chosenGenre ? dispatch(getMoviesByPageAndGenre(number, chosenGenre)) : dispatch(getMoviesByPage(number))
+        pathname.includes('page') ? history.push(`${number}`) : history.push(`${pathname}page/${number}`)
     };
-
     return (
         <>
             <div className={cl.pagination}>

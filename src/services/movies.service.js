@@ -16,11 +16,15 @@ const getGenres = () => (dispatch) => {
         .then(value => dispatch(setGenres(value)));
 }
 
-const searchMovie = (value) => (dispatch) => {
-    axiosInstance
-        .get(movieSearch + value)
-        .then(value => value.data)
-        .then(value => dispatch(setGenres(value)));
+const searchMovie = (value, wrongSearch) => async (dispatch) => {
+    const searchData = await (await axiosInstance.get(movieSearch + value)).data;
+    searchData.results.length >= 1 ? dispatch(setMovies(searchData)) : wrongSearch();
+
+}
+
+const getSearchMoviesByPage = (params) => async (dispatch) => {
+    const searchData = await (await axiosInstance.get(movieSearch + params.key + byPageURL + params.id)).data;
+    dispatch(setMovies(searchData));
 }
 
 const getMoviesByGenre = (id) => (dispatch) => {
@@ -36,9 +40,9 @@ const getMoviesByPage = (page) => (dispatch) => {
         .then(value => dispatch(setMovies(value)));
 }
 
-const getMoviesByPageAndGenre = (page, genre) => (dispatch) => {
+const getMoviesByPageAndGenre = (params) => (dispatch) => {
     axiosInstance
-        .get(baseURL + byPageURL + page + byGenresURL + genre)
+        .get(baseURL + byPageURL + params.id + byGenresURL + params.genre)
         .then(value => value.data)
         .then(value => dispatch(setMovies(value)));
 }
@@ -71,5 +75,6 @@ export {
     getMovieInfo,
     getImageMovie,
     getSimilarMovie,
-    searchMovie
+    searchMovie,
+    getSearchMoviesByPage
 };

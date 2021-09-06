@@ -20,7 +20,7 @@ export default function Images({id}) {
 
     return (
         <>
-            {movieToRender.map((value, index) => <Image style={style[index]} key={value.index} image={value}/>)}
+            {movieToRender.map((value, index) => <Image style={style[index]} key={index} image={value}/>)}
         </>
     );
 }

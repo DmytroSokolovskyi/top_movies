@@ -3,30 +3,24 @@ import {
     Route,
 } from "react-router-dom";
 
-import MoviesList from "./components/moviesList/MoviesList";
-import MovieDetails from "./components/movieDetails/MovieDetails";
 import {ThemeProvider} from "styled-components";
 import {darkTheme, GlobalStyles, lightTheme} from "./components/UI/switchTheme/themes";
 import {useSelector} from "react-redux";
 import MoviesPage from "./pages/moviesPage/MoviesPage";
+import Login from "./pages/Login";
 
 
 export default function App() {
     const {theme} = useSelector(state => state.themeReducer);
 
     return (
-
-
         <Router>
-            <MoviesPage>
-                <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-                    <GlobalStyles/>
-                    <Route exact path={'/'} component={MoviesList}/>
-                    <Route path={"/:id"} component={MovieDetails}/>
-                </ThemeProvider>
-            </MoviesPage>
+            <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+                <GlobalStyles/>
+                <Route path={'/'} component={MoviesPage}/>
+                <Route path={'/login'} component={Login}/>
+                {/*<Redirect to={'/'}/>*/}
+            </ThemeProvider>
         </Router>
-
-
     );
 }

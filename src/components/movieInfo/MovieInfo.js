@@ -38,7 +38,7 @@ export default function MovieInfo({
                 <div className={cl.imgPosterDiv}>
                     <img className={cl.imgPoster} src={imageURL + poster_path} alt={title}/>
                     <div className={cl.genreList}>
-                        {genres && genres.map(value => <MyBadge key={value.id}>{value.name}</MyBadge>)}
+                        {genres && genres.map(value => <MyBadge id={value.id} key={value.id}>{value.name}</MyBadge>)}
                     </div>
                 </div>
                 <div className={cl.allImg}>

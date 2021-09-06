@@ -1,6 +1,6 @@
 import {SET_GENRES, SET_MOVIES, SET_MOVIES_BY_GENRE} from "../actions";
 
-let initialState = {movies: [], genres: [], theme: 'light', chosenGenre: null, total_results: null, totalPages: null}
+let initialState = {movies: [], genres: [], theme: 'light', total_results: null, totalPages: null}
 
 export const moviesReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -12,7 +12,6 @@ export const moviesReducer = (state = initialState, action) => {
                 movies: [...action.payload.value.results],
                 totalPages: action.payload.value.total_pages,
                 total_results: action.payload.value.total_results,
-                chosenGenre: action.payload.id
             }
         }
         case SET_MOVIES: {

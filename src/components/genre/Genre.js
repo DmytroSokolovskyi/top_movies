@@ -4,17 +4,20 @@ import {useDispatch, useSelector} from "react-redux";
 import SelectedGenre from "./selectedGenre/SelectedGenre";
 import cl from "./Genre.module.css"
 import {getGenres, getMoviesByGenre} from "../../services";
+import {useHistory} from "react-router";
 
 export default function Genre() {
 
     const {genres} = useSelector(state => state.moviesReducer);
     const dispatch = useDispatch();
+    const history = useHistory();
     useEffect(() => {
         dispatch(getGenres());
     }, [dispatch]);
 
     const selectedGenre = (e) => {
         dispatch(getMoviesByGenre(e.target.value))
+        history.push(`/genre/${e.target.value}/`)
     };
 
 
