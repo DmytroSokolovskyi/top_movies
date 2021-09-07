@@ -11,16 +11,15 @@ import Login from "./pages/Login";
 
 
 export default function App() {
-    const {theme} = useSelector(state => state.themeReducer);
+    const {themeReducer} = useSelector(state => state);
 
     return (
         <Router>
-            <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
+            <ThemeProvider theme={themeReducer.theme === "light" ? lightTheme : darkTheme}>
                 <GlobalStyles/>
                 <Route path={'/'} component={MoviesPage}/>
                 <Route path={'/login'} component={Login}/>
-                {/*<Redirect to={'/'}/>*/}
             </ThemeProvider>
         </Router>
     );
-}
+};

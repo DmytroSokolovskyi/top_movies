@@ -1,4 +1,4 @@
-import cl from './MyBadge.module.css'
+import cl from './MyBadge.module.css';
 
 export default function MyBadge({children}) {
 

@@ -1,5 +1,5 @@
-import {getMoviesByGenre, imageURL} from "../../services";
-import cl from './MovieInfo.module.css'
+import {imageURL} from "../../services";
+import cl from './MovieInfo.module.css';
 import MyBadge from "../UI/myBadge/MyBadge";
 import StarsRating from "../starsRating/StarsRating";
 import Images from "../images/Images";
@@ -21,15 +21,6 @@ export default function MovieInfo({
                                           overview
                                       }
                                   }) {
-
-    // const history = useHistory();
-    //
-    // const dispatch = useDispatch();
-    // const gotoGenre = (id) => {
-    //
-    //     history.push(`/`);
-    //     dispatch(getMoviesByGenre(id));
-    // };
 
     return (
         <>

@@ -1,20 +1,19 @@
 import {useDispatch, useSelector} from "react-redux";
 import {useEffect} from "react";
 import {getMovieInfo} from "../../services";
-import cl from "./MovieDetails.module.css"
-import Movie from "../movie/Movie";
-import Companies from "../companies/Companies";
-import Images from "../images/Images";
-import MovieInfo from "../movieInfo/MovieInfo";
-import SimilarMovies from "../similarMovies/SimilarMovies";
+import cl from "./MovieDetails.module.css";
+import Movie from "../../components/movie/Movie";
+import Companies from "../../components/companies/Companies";
+import MovieInfo from "../../components/movieInfo/MovieInfo";
+import SimilarMovies from "../../components/similarMovies/SimilarMovies";
 
-export default function MovieDetails({match, match: {url, params: {id}}}) {
-    const state = useSelector(state => state.infoReducer);
-    const {movie, lastMovies} = state;
+export default function MovieDetails({match: {url, params: {id}}}) {
+    const {infoReducer} = useSelector(state => state);
+    const {movie, lastMovies} = infoReducer;
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getMovieInfo(url))
+        dispatch(getMovieInfo(url));
     }, [dispatch, url]);
 
     const toRenderLast = lastMovies.filter(value => value.id !== movie.id);

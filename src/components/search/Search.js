@@ -1,17 +1,25 @@
 import cl from './Search.module.css';
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import {useDispatch} from "react-redux";
 import {searchMovie} from "../../services";
 import {useHistory} from "react-router";
+import React from "react";
 
-export default function Search() {
+export default React.memo ( function Search() {
 
     let [searchValue, setSearchValue] = useState('');
+
+    console.log("          Search           ")
+
     const history = useHistory();
     const dispatch = useDispatch();
 
+        useEffect(() => {
+
+            }, []);
+
     const wrongSearch = () => {
-    console.log("Beda")
+        history.push(`/search/wrong_search/`)
     };
 
     const goSearch = (e) => {
@@ -22,18 +30,15 @@ export default function Search() {
     };
 
 
-    const changeInput = (e) => {
-        setSearchValue(e.target.value)
-    };
-
     return (
         <div className={cl.inputDiv}>
             <form onSubmit={goSearch}>
                 <input className={cl.myInput} name={'search'} value={searchValue} placeholder={'search'}
-                       onInput={changeInput} type="search"/>
+                       onInput={(e) => setSearchValue(e.target.value)} type="search"/>
             </form>
 
         </div>
 
     );
 }
+)

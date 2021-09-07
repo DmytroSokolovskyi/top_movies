@@ -5,7 +5,9 @@ import SmallMovie from "../smallmovie/SmallMovie";
 
 export default function SimilarMovies({id}) {
 
-    const {similar} = useSelector(state => state.infoReducer);
+    const {infoReducer} = useSelector(state => state);
+    const {similar} = infoReducer;
+
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch(getSimilarMovie(id))

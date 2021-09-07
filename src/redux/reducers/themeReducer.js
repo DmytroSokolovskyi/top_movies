@@ -1,6 +1,6 @@
 import {THEME_DARK, THEME_LIGHT} from "../actions";
 
-let initialState = {theme: 'light'}
+let initialState = {theme: 'light'};
 
 export const themeReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -11,6 +11,7 @@ export const themeReducer = (state = initialState, action) => {
             return {...state, theme: 'light'};
         }
 
-        default: return state
+        default:
+            return state;
     }
-}
+};

@@ -1,7 +1,6 @@
 import {SET_IMAGES, SET_MOVIE, SET_SIMILAR} from "../actions";
 
-
-let initialState = {movie: {}, lastMovies: [], similar: [], images: []}
+let initialState = {movie: {}, lastMovies: [], similar: [], images: []};
 
 export const infoReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -11,22 +10,22 @@ export const infoReducer = (state = initialState, action) => {
                 return {
                     ...state, movie: {...action.payload},
                     lastMovies: [...state.lastMovies]
-                }
+                };
             }
             return {
                 ...state, movie: {...action.payload},
                 lastMovies: [...state.lastMovies, action.payload]
-            }
+            };
         }
 
         case SET_IMAGES : {
-            return {...state, images: action.payload}
+            return {...state, images: action.payload};
         }
         case SET_SIMILAR : {
-            return {...state, similar: [...action.payload]}
+            return {...state, similar: [...action.payload]};
         }
 
         default:
-            return state
+            return state;
     }
-}
+};

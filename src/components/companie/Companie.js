@@ -1,8 +1,8 @@
-import cl from './Companie.module.css'
+import cl from './Companie.module.css';
 import {imageURL} from "../../services";
 
 export default function Companie({companie: {name, logo_path}}) {
-
+    console.log("    Companie    ")
     return (
         <div className={cl.mainCompanie}>
             {

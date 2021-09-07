@@ -1,34 +1,34 @@
 import {useEffect} from "react";
-import {useDispatch, useSelector} from "react-redux";
-
-import SelectedGenre from "./selectedGenre/SelectedGenre";
-import cl from "./Genre.module.css"
-import {getGenres, getMoviesByGenre} from "../../services";
+import {useDispatch} from "react-redux";
+import SelectedGenre from "../selectedGenre/SelectedGenre";
+import cl from "./Genre.module.css";
+import {getGenres} from "../../services";
 import {useHistory} from "react-router";
+import React from "react";
 
-export default function Genre() {
-
-    const {genres} = useSelector(state => state.moviesReducer);
+export default React.memo(function Genre({genres}) {
     const dispatch = useDispatch();
-    const history = useHistory();
+    console.log(' genre  ')
     useEffect(() => {
         dispatch(getGenres());
-    }, [dispatch]);
+    }, []);
 
-    const selectedGenre = (e) => {
-        dispatch(getMoviesByGenre(e.target.value))
-        history.push(`/genre/${e.target.value}/`)
-    };
+        const history = useHistory();
 
-
-    return (
-        <div className={cl.mainGenre}>
-            <select className={cl.selectGenre} name="selectMovie" onChange={selectedGenre}>
-                {
-                    genres && genres.map(value => <SelectedGenre id={value.id} selectedGenre={selectedGenre} key={value.id}
-                                                                 item={value}/>)
-                }
-            </select>
-        </div>
-    );
-}
+        return (
+            <div className={cl.mainGenre}>
+                <select className={cl.selectGenre} name="selectMovie" onChange={(e) => {
+                    history.push(`/genre/${e.target.value}/`)
+                }}>
+                    {
+                        genres && genres.map(value => <SelectedGenre id={value.id} selectedGenre={(e) => {
+                            history.push(`/genre/${e.target.value}/`)
+                        }}
+                                                                     key={value.id}
+                                                                     item={value}/>)
+                    }
+                </select>
+            </div>
+        );
+    }
+);

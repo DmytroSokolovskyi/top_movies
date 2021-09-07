@@ -4,11 +4,13 @@ import {useEffect} from "react";
 import {getImageMovie} from "../../services";
 
 export default function Images({id}) {
-    const {images} = useSelector(state => state.infoReducer);
+    const {infoReducer} = useSelector(state => state);
+    const {images} = infoReducer;
+
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(getImageMovie(id))
+        dispatch(getImageMovie(id));
     }, [id, dispatch]);
 
     const movieToRender = images.slice(1, 4);
