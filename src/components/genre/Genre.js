@@ -1,17 +1,18 @@
+import React, {memo} from "react";
 import {useEffect} from "react";
 import {useDispatch} from "react-redux";
 import SelectedGenre from "../selectedGenre/SelectedGenre";
 import cl from "./Genre.module.css";
 import {getGenres} from "../../services";
 import {useHistory} from "react-router";
-import React from "react";
 
-export default React.memo(function Genre({genres}) {
+
+
+export default memo(function Genre({genres}) {
     const dispatch = useDispatch();
-    console.log(' genre  ')
     useEffect(() => {
         dispatch(getGenres());
-    }, []);
+    }, [dispatch]);
 
         const history = useHistory();
 

@@ -1,13 +1,10 @@
 import {useDispatch} from "react-redux";
 import {darkTheme, lightTheme} from "../../../redux/actions";
-import React from "react";
+import React, {memo} from "react";
 import './SwitchTheme.css'
 
-export default React.memo(
+export default memo(
     function SwitchTheme({theme}) {
-
-        console.log("    SwitchTheme    ")
-
 
         const dispatch = useDispatch();
         const themeToggler = () => {

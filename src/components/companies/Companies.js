@@ -1,13 +1,14 @@
+import React, {memo} from "react";
 import Companie from "../companie/Companie";
 
-export default function Companies({companies}) {
+export default memo(
+    function Companies({companies}) {
 
-    console.log("    CompanCompanies    ")
+        return (
+            <>
+                {companies && companies.map(value => <Companie key={value.id} companie={value}/>)}
+            </>
 
-    return (
-        <>
-            {companies && companies.map(value => <Companie key={value.id} companie={value}/>)}
-        </>
-
-    );
-}
+        );
+    }
+);

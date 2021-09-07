@@ -27,13 +27,13 @@ export default function MovieInfo({
             {movie &&
             <div className={cl.mainMovieInfo}>
                 <div className={cl.imgPosterDiv}>
-                    <img className={cl.imgPoster} src={imageURL + poster_path} alt={title}/>
+                    {poster_path && <img className={cl.imgPoster} src={imageURL + poster_path} alt={title}/>}
                     <div className={cl.genreList}>
                         {genres && genres.map(value => <MyBadge id={value.id} key={value.id}>{value.name}</MyBadge>)}
                     </div>
                 </div>
                 <div className={cl.allImg}>
-                    <Images id={id}/>
+                    {id && <Images id={id}/>}
                 </div>
                 <div className={cl.textInfo}>
                     <ul>

@@ -11,7 +11,7 @@ export default function Images({id}) {
 
     useEffect(() => {
         dispatch(getImageMovie(id));
-    }, [id, dispatch]);
+    }, [dispatch,id]);
 
     const movieToRender = images.slice(1, 4);
 
