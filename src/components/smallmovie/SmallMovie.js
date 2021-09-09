@@ -4,11 +4,9 @@ import {imageURL} from "../../services";
 import {useHistory} from "react-router";
 
 export default function SmallMovie ({movie, movie: {title ,poster_path, vote_average, release_date}}) {
-
     const history = useHistory();
-
     const goToInfo = () => {
-        history.push(`/${movie.id}`);
+        history.push(`/movie/${movie.id}`);
     };
 
     return (

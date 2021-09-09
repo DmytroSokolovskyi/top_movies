@@ -12,7 +12,6 @@ export default memo(
         useEffect(() => {
             dispatch(getSimilarMovie(id))
         }, [dispatch, id]);
-
         return (
             <>
                 {similar && similar.map(value => <SmallMovie key={value.id} movie={value}/>)}

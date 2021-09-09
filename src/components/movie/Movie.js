@@ -7,22 +7,17 @@ import {imageURL} from "../../services";
 
 export default function Movie({movie, movie: {title, poster_path, overview}}) {
     const history = useHistory();
-
         let [moreInfo, setMoreInfo] = useState(false);
-
-    const goToInfo = () => {
-        history.push(`/${movie.id}`);
-    };
 
     return (
         <div className={cl.movie}
              onMouseEnter={() => {
-                 setMoreInfo(true)
+                 setMoreInfo(prevState => !prevState)
              }}
              onMouseLeave={() => {
-                 setMoreInfo(false)
+                 setMoreInfo(prevState => !prevState)
              }}
-             onClick={goToInfo}>
+             onClick={() => history.push(`/movie/${movie.id}`)}>
             <div className={cl.stars}>
                 <StarsRating starsMovie={movie.vote_average}/>
             </div>

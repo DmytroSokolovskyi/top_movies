@@ -1,0 +1,16 @@
+
+
+.logDiv {
+    display: flex;
+    height: 500px;
+    align-items: center;
+    justify-content: center;
+}
+
+
+input {
+    background-image: linear-gradient(240deg, #817556, transparent);
+    border-radius: 15%;
+    width: 100%;
+    margin: 0 7%;
+}

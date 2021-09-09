@@ -1,28 +1,32 @@
+import React, {memo} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import Image from "../image/Image";
 import {useEffect} from "react";
 import {getImageMovie} from "../../services";
 
-export default function Images({id}) {
-    const {infoReducer} = useSelector(state => state);
-    const {images} = infoReducer;
+export default memo(
+    function Images({id}) {
 
-    const dispatch = useDispatch();
+        const {infoReducer} = useSelector(state => state);
+        const {images} = infoReducer;
 
-    useEffect(() => {
-        dispatch(getImageMovie(id));
-    }, [dispatch,id]);
+        const dispatch = useDispatch();
 
-    const movieToRender = images.slice(1, 4);
+        useEffect(() => {
+            dispatch(getImageMovie(id));
+        }, [dispatch,id]);
+
+        const movieToRender = images.slice(1, 4);
 
 
-    const style = [{width: '25%', height: '22%', margin: '5px 0 0 40px', float: 'left', top: '20%', left: '20%', position: 'absolute'},
-        {width: '20%', height: '19%', margin: '38px 0 0 42px', float: 'left', top: '45%', left: '13%', position: 'absolute'},
-        {width: '20%', height: '15%', margin: '38px 0 0 20px', float: 'left', top: '35%', left: '24%', position: 'absolute'},];
+        const style = [{width: '25%', height: '22%', margin: '5px 0 0 40px', float: 'left', top: '20%', left: '20%', position: 'absolute'},
+            {width: '20%', height: '19%', margin: '38px 0 0 42px', float: 'left', top: '45%', left: '13%', position: 'absolute'},
+            {width: '20%', height: '15%', margin: '38px 0 0 20px', float: 'left', top: '35%', left: '24%', position: 'absolute'},];
 
-    return (
-        <>
-            {movieToRender.map((value, index) => <Image style={style[index]} key={index} image={value}/>)}
-        </>
-    );
-}
+        return (
+            <>
+                {movieToRender.map((value, index) => <Image style={style[index]} key={index} image={value}/>)}
+            </>
+        );
+    }
+)

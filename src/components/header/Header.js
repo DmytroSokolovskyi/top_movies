@@ -7,13 +7,13 @@ import User from "../user/User";
 import Search from "../search/Search";
 
 export default memo(
-    function Header({genres, theme}) {
+    function Header() {
         return (
             <div className={cl.header}>
                 <SiteName/>
-                <Genre genres={genres}/>
+                <Genre/>
                 <Search/>
-                <SwitchTheme theme={theme}/>
+                <SwitchTheme/>
                 <User/>
             </div>
         );

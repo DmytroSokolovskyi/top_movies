@@ -1,7 +1,7 @@
 import ReactStars from "react-rating-stars-component/dist/react-stars";
+import React, {memo} from "react";
 
-export default function StarsRating ({starsMovie}) {
-
+export default memo( function StarsRating ({starsMovie}) {
     const stars = {
         count: 10,
         size: 18,
@@ -15,3 +15,4 @@ export default function StarsRating ({starsMovie}) {
         <ReactStars {...stars}/>
     );
  }
+)

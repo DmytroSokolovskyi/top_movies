@@ -8,15 +8,17 @@ import Companies from "../../components/companies/Companies";
 import MovieInfo from "../../components/movieInfo/MovieInfo";
 import SimilarMovies from "../../components/similarMovies/SimilarMovies";
 
+
 export default memo(
-    function MovieDetails({match: {url, params: {id}}}) {
+    function MovieDetails({match: {params: {id}}}) {
         const {infoReducer} = useSelector(state => state);
         const {movie, lastMovies, similar} = infoReducer;
         const dispatch = useDispatch();
 
+
         useEffect(() => {
-            dispatch(getMovieInfo(url));
-        }, [dispatch, url]);
+            dispatch(getMovieInfo(id));
+        }, [dispatch, id]);
 
         const toRenderLast = lastMovies.filter(value => value.id !== movie.id);
 
@@ -40,4 +42,4 @@ export default memo(
             </div>
         );
     }
-)
+);

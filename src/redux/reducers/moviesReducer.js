@@ -1,6 +1,6 @@
-import {SET_GENRES, SET_MOVIES, SET_MOVIES_BY_GENRE} from "../actions";
+import {SET_GENRES, SET_MOVIES, SET_MOVIES_BY_GENRE, SET_USER} from "../actions";
 
-let initialState = {movies: [], genres: [], theme: 'light', total_results: null, totalPages: null};
+let initialState = {movies: [], genres: [], auth: false, total_results: null, totalPages: null};
 
 export const moviesReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -23,6 +23,15 @@ export const moviesReducer = (state = initialState, action) => {
                 total_results: action.payload.total_results
             };
         }
+
+        case SET_USER: {
+            return {
+                ...state,
+                userLogin: {...action.payload},
+                auth: true
+            };
+        }
+
         default:
             return state;
     }

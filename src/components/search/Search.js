@@ -6,9 +6,7 @@ import {useHistory} from "react-router";
 import React, {memo} from "react";
 
 export default memo ( function Search() {
-
     let [searchValue, setSearchValue] = useState('');
-
     const history = useHistory();
     const dispatch = useDispatch();
 
